@@ -5,3 +5,9 @@
 # TODO 1: carga data/ventas.csv con readr::read_csv en un data.frame
 # TODO 2: imprime las dimensiones (dim) del data.frame
 # TODO 3: imprime las primeras filas (head) para revisar las columnas
+intall.package("readr")
+library(readr)
+ventas <- read.csv(ruta_ventas)
+head(ventas)
+dim(ventas)
+str(ventas)

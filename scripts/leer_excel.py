@@ -5,3 +5,13 @@
 # TODO 1: importa pandas
 # TODO 2: carga data/ventas.xlsx indicando la hoja correcta
 # TODO 3: imprime las dimensiones y las primeras filas
+
+import pandas as pd 
+ventas = pd.read_excel("colab_estadistica/ventas.xlsx", sheet_name="ventas")
+print("="*50)
+print(ventas.head())
+print("="*50)
+print(ventas.shape)
+print("="*50)
+print(ventas.dtypes)
+print("="*50)

@@ -10,3 +10,17 @@
 #         - ticket promedio (ventas totales / clientes totales)
 #         - sucursal con mayor y menor venta
 #         - región con mayor venta total
+
+import pandas as pd
+ventas = pd.read_csv("colab_estadistica/ventas.csv")
+ventas["ticket"] = ventas["ventas"]/ventas["clientes"]
+print(ventas.head())
+
+#print(ventas["ventas"].max())
+print("sucursal con mayor ventas: ", ventas.loc[ventas["ventas"].idxmax(), "sucursal"])
+print("="*50)
+print("sucursal con menor ventas: ", ventas.loc[ventas["ventas"].idxmin(), "sucursal"])
+print("="*50)
+#sacar el maximo de ventas de las regiones
+ventas_per_region = ventas.groupby("region")["ventas"].max()
+print(ventas_per_region)
